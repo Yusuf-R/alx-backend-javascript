@@ -1,14 +1,6 @@
-//Keep every promise you make and only make promises you can keep
-function getResponseFromAPI() {
+// Keep every promise you make and only make promises you can keep
+export default function getResponseFromAPI() {
+  /* eslint-disable no-unused-vars */
   return new Promise((resolve, reject) => {
-    /* eslint-disable */
-      if (true) {
-        resolve();
-      } else {
-        reject();
-      }
-      /* eslint-enable */
   });
 }
-
-export default getResponseFromAPI;
