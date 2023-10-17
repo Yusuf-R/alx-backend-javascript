@@ -1,8 +1,8 @@
 // A template for HolbertonCourse
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._checkType(name, 'string', 'name');
-    this._checkType(length, 'number', 'length');
+    this._checkType(name, 'string', 'Name');
+    this._checkType(length, 'number', 'Length');
     this._checkStudentsType(students);
   }
 
@@ -56,7 +56,7 @@ class HolbertonCourse {
     } else if (Array.isArray(students) && students.every((student) => typeof student === 'string')) {
       this._students = students; // If it's an array of strings, it's valid.
     } else {
-      throw new TypeError('students must be a string or an array of strings');
+      throw new TypeError('Students must be a string or an array of strings');
     }
   }
 }
