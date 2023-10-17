@@ -8,7 +8,7 @@ class HolbertonCourse {
 
   // setter function
   set name(name) {
-    this._checkType(name, 'string', 'name');
+    this._checkType(name, 'string', 'Name');
   }
 
   get name() {
@@ -16,7 +16,7 @@ class HolbertonCourse {
   }
 
   set length(length) {
-    this._checkType(length, 'number', 'length');
+    this._checkType(length, 'number', 'Length');
   }
 
   get length() {
