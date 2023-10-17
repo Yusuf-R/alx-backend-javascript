@@ -1,14 +1,15 @@
-// A template for HolbertonCourse
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._checkType(name, 'string', 'Name');
-    this._checkType(length, 'number', 'Length');
-    this._checkStudentsType(students);
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
 
-  // setter function
   set name(name) {
-    this._checkType(name, 'string', 'Name');
+    if (typeof name !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
+    this._name = name;
   }
 
   get name() {
@@ -16,49 +17,31 @@ class HolbertonCourse {
   }
 
   set length(length) {
-    this._checkType(length, 'number', 'Length');
+    if (typeof length !== 'number') {
+      throw new TypeError('Length must be a number');
+    }
+    this._length = length;
   }
 
   get length() {
     return this._length;
   }
 
-  set students(students) {
-    this._checkStudentsType(students);
-  }
-
   get students() {
     return this._students;
   }
 
-  _checkType(value, expectedType, paramName) {
-    if (expectedType === 'string') {
-      if (typeof value !== 'string') {
-        throw new TypeError(`${paramName} must be a ${expectedType}`);
-      }
-    }
-    if (expectedType === 'number') {
-      if (typeof value !== 'number') {
-        throw new TypeError(`${paramName} must be a ${expectedType}`);
-      }
+  set students(newStudents) {
+    if (!(newStudents instanceof Array)) {
+      throw new TypeError('Students must be an array of strings');
     }
 
-    if (paramName === 'Name') {
-      this._name = value;
-    } else if (paramName === 'Length') {
-      this._length = value;
+    if (!newStudents.every((newStudent) => typeof newStudent === 'string')) {
+      throw new TypeError('Students must be an array of strings');
     }
-  }
 
-  _checkStudentsType(students) {
-    if (typeof students === 'string') {
-      this._students = students; // If it's a string, it's valid.
-    } else if (Array.isArray(students) && students.every((student) => typeof student === 'string')) {
-      this._students = students; // If it's an array of strings, it's valid.
-    } else {
-      throw new TypeError('Students must be a string or an array of strings');
-    }
+    this._students = newStudents;
   }
 }
 
-export default HolbertonCourse;
+export default HolbertonCourse
