@@ -43,9 +43,9 @@ class HolbertonCourse {
       }
     }
 
-    if (paramName === 'name') {
+    if (paramName === 'Name') {
       this._name = value;
-    } else if (paramName === 'length') {
+    } else if (paramName === 'Length') {
       this._length = value;
     }
   }
