@@ -1,12 +1,3 @@
-// Class hasn't hoisting
-// How Normal functions
-
-/**
- * Define a class in Holberton
- *
- * @class HolbertonClass
- */
-
 /* eslint-disable */
 export class HolbertonClass {
   constructor(year, location) {
