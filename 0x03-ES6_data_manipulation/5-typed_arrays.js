@@ -1,16 +1,20 @@
-// Typed Array 8 Int
+// Create a function named createInt8TypedArray that
+// returns a new ArrayBuffer with an Int8 value at a specific position.
 
-const createInt8TypedArray = (length, position, value) => {
-  const buffer = new ArrayBuffer(length);
-  const data = new DataView(buffer);
+// It should accept three arguments: length (Number), position (Number), and value (Number).
 
-  if (position > length - 1) {
-    throw new Error('Position outside range');
+// If adding the value is not possible the error Position outside
+// the range should be thrown.
+
+export default function createInt8TypedArray(length, position, value) {
+  if (!Number.isInteger(length) || !Number.isInteger(position) || !Number.isInteger(value)) {
+    throw new Error('Arguments must be integers');
   }
-
-  data.setInt8(position, value);
-
-  return data;
-};
-
-export default createInt8TypedArray;
+  if (position < 0 || position > length) {
+    throw new Error('Position outside the range');
+  }
+  const buffer = new ArrayBuffer(length);
+  const dataView = new DataView(buffer);
+  dataView.setInt8(position, value);
+  return dataView;
+}
