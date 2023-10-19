@@ -1,19 +1,23 @@
-// Weak map endpoint
+// Export a const instance of WeakMap and name it weakMap.
+
+// Export a new function named queryAPI. It should accept an endpoint argument like so:
+
+// {
+//   protocol: 'http',
+//   name: 'getUsers',
+// }
 
 const weakMap = new WeakMap();
 
-const queryAPI = (endpoint) => {
-  let times = weakMap.get(endpoint) || 0;
-
-  times += 1;
-
-  weakMap.set(endpoint, times);
-
-  if (times >= 5) {
+function queryAPI(endpoint) {
+  if (!weakMap.has(endpoint)) {
+    weakMap.set(endpoint, 0);
+  }
+  const count = weakMap.get(endpoint);
+  if (count >= 5) {
     throw new Error('Endpoint load is high');
   }
-
-  return times;
-};
-
+  weakMap.set(endpoint, weakMap.get(endpoint) + 1);
+  return count;
+}
 export { weakMap, queryAPI };
