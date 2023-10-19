@@ -11,7 +11,7 @@ export default function createInt8TypedArray(length, position, value) {
     throw new Error('Arguments must be integers');
   }
   if (position < 0 || position > length) {
-    throw new Error('Position outside the range');
+    throw new Error('Position outside range');
   }
   const buffer = new ArrayBuffer(length);
   const dataView = new DataView(buffer);
