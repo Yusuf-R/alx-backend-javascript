@@ -36,10 +36,10 @@ async function countStudents(filePath) {
           }
 
           const { field } = obj;
+
           if (!studentsByField[field]) {
             studentsByField[field] = [];
           }
-
           studentsByField[field].push(obj.firstname);
         } else {
           // Skip invalid lines
@@ -69,6 +69,9 @@ const app = http.createServer(async (req, res) => {
     res.end('Hello Holberton School!');
   }
   if (req.url === '/students') {
+    // wrieHead allows you to specify status code and headers
+    // it is shorter than using res.setHeader()
+    // res.end siginifies what will be sent to the client
     res.writeHead(200, header);
     res.write('This is the list of our students\n');
     try {
