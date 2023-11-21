@@ -4,7 +4,7 @@
 // HTTP server should listen on port 1245
 // Displays Hello Holberton School! in the page body for any endpoint as plain text
 
-const http = require('node:http');
+const http = require('http');
 
 const port = 1245;
 
