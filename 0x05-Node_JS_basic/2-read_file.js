@@ -28,7 +28,6 @@ function countStudents(filePath) {
           for (let j = 0; j < dataFields.length; j += 1) {
             obj[dataFields[j]] = cf[j];
           }
-
           const { field } = obj;
           if (!studentsByField[field]) {
             studentsByField[field] = [];
@@ -36,11 +35,10 @@ function countStudents(filePath) {
 
           studentsByField[field].push(obj.firstname);
         } else {
-          log(`Skipping invalid data at line ${i + 1}`);
+          // Skip invalid lines
         }
       }
     }
-
     // Log the results
     log(`Number of students: ${dataList.length - 1}`);
     for (const field in studentsByField) {
