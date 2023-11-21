@@ -20,17 +20,25 @@ function countStudents(filePath) {
     // loop through the data and create an object based on the dynamic data fields
     for (let i = 1; i < dataList.length; i += 1) {
       const cf = dataList[i].trim().split(',');
-      const obj = {};
-      for (let j = 0; j < dataFields.length; j += 1) {
-        obj[dataFields[j]] = cf[j];
-      }
 
-      const { field } = obj;
-      if (!studentsByField[field]) {
-        studentsByField[field] = [];
-      }
+      // Skip empty lines
+      if (!(cf.length === 1 && cf[0].trim() === '')) {
+        if (cf.length === dataFields.length) {
+          const obj = {};
+          for (let j = 0; j < dataFields.length; j += 1) {
+            obj[dataFields[j]] = cf[j];
+          }
 
-      studentsByField[field].push(obj.firstname);
+          const { field } = obj;
+          if (!studentsByField[field]) {
+            studentsByField[field] = [];
+          }
+
+          studentsByField[field].push(obj.firstname);
+        } else {
+          log(`Skipping invalid data at line ${i + 1}`);
+        }
+      }
     }
 
     // Log the results
