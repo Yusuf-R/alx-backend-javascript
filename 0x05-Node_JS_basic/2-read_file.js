@@ -38,21 +38,22 @@ function countStudents(filePath) {
       }
     }
     // Log the results
-    // log(`Number of students: ${dataList.length - 1}`);
-    // for (const field in studentsByField) {
-    //   if (Object.prototype.hasOwnProperty.call(studentsByField, field)) {
-    //     log(`Number of students in ${field}: ${studentsByField[field].length}.
-    //      List: ${studentsByField[field].join(', ')}`);
-    //   }
-    // }
-    let result = `Number of students: ${dataList.length - 1}\n`;
-
+    console.log(`Number of students: ${dataList.length - 1}`);
     for (const field in studentsByField) {
       if (Object.prototype.hasOwnProperty.call(studentsByField, field)) {
-        result += `Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].join(', ')}\n`;
+        // eslint-disable-next-line max-len
+        console.log(`Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].join(', ')}`);
       }
     }
-    console.log(result.trim());
+    // let result = `Number of students: ${dataList.length - 1}\n`;
+    // eslint-disable-next-line spaced-comment
+    /* eslint max-len: ["error", { "ignoreComments": true }] */
+    // for (const field in studentsByField) {
+    //   if (Object.prototype.hasOwnProperty.call(studentsByField, field)) {
+    //     result += `Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].join(', ')}\n`;
+    //   }
+    // }
+    // return console.log(result.trim());
   } catch (err) {
     throw Error('Cannot load the database');
   }
