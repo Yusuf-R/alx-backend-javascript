@@ -3,8 +3,6 @@
 // The function should return the number of students!
 const fs = require('fs');
 
-const { log } = console;
-
 // read file function synchronously
 function countStudents(filePath) {
   try {
@@ -40,12 +38,21 @@ function countStudents(filePath) {
       }
     }
     // Log the results
-    log(`Number of students: ${dataList.length - 1}`);
+    // log(`Number of students: ${dataList.length - 1}`);
+    // for (const field in studentsByField) {
+    //   if (Object.prototype.hasOwnProperty.call(studentsByField, field)) {
+    //     log(`Number of students in ${field}: ${studentsByField[field].length}.
+    //      List: ${studentsByField[field].join(', ')}`);
+    //   }
+    // }
+    let result = `Number of students: ${dataList.length - 1}\n`;
+
     for (const field in studentsByField) {
       if (Object.prototype.hasOwnProperty.call(studentsByField, field)) {
-        log(`Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].join(', ')}`);
+        result += `Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].join(', ')}\n`;
       }
     }
+    console.log(result.trim());
   } catch (err) {
     throw Error('Cannot load the database');
   }
