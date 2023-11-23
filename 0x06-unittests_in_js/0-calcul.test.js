@@ -20,7 +20,15 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1.5, 2.98), 5);
   });
   it(msg, () => {
-    const result = calculateNumber(-1, 2);
-    assert.strictEqual(result, 1);
+    const result = calculateNumber(7, -20);
+    assert.strictEqual(result, -13);
   });
-})
+  it(msg, () => {
+    const result = calculateNumber(0, 0);
+    assert.strictEqual(result, 0);
+  });
+  it(msg, () => {
+    const result = calculateNumber(14.4, 6.4);
+    assert.strictEqual(result, 20);
+  });
+});
