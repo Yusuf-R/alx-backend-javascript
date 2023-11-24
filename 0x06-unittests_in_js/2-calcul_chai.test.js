@@ -16,26 +16,26 @@ describe('SuiteName: calculateNumber', () => {
     });
     it(msg, () => {
       const result = calculateNumber(fType, -1, 6.2);
-      expect(result).to.equal(result, 5);
+      expect(result).to.equal(5);
     });
     it(msg, () => {
       expect(calculateNumber(fType, 1.5, 2.98)).to.equal(5);
     });
     it(msg, () => {
       const result = calculateNumber(fType, 7, -20);
-      expect(result).to.equal(result, -13);
+      expect(result).to.equal(-13);
     });
     it(msg, () => {
       const result = calculateNumber(fType, 0, 0);
-      expect(result).to.equal(result, 0);
+      expect(result).to.equal(0);
     });
     it(msg, () => {
       const result = calculateNumber(fType, 14.4, 6.4);
-      expect(result).to.equal(result, 20);
+      expect(result).to.equal(20);
     });
     it(msg, () => {
       const result = calculateNumber(fType, -4.5, -5.7);
-      expect(result).to.equal(result, -10);
+      expect(result).to.equal(-10);
     });
   });
   describe('TestSuite for type: SUBTRACT', () => {
@@ -43,30 +43,30 @@ describe('SuiteName: calculateNumber', () => {
     const fType = 'SUBTRACT';
     it(msg, () => {
       const result = calculateNumber(fType, -1, -2);
-      expect(result).to.equal(result, 1);
+      expect(result).to.equal(1);
     });
     it(msg, () => {
       const result = calculateNumber(fType, -1, 6.2);
-      expect(result).to.equal(result, -7);
+      expect(result).to.equal(-7);
     });
     it(msg, () => {
       expect(calculateNumber(fType, 1.5, 2.98)).to.equal(-1);
     });
     it(msg, () => {
       const result = calculateNumber(fType, 7, -20);
-      expect(result).to.equal(result, 27);
+      expect(result).to.equal(27);
     });
     it(msg, () => {
       const result = calculateNumber(fType, 0, 0);
-      expect(result).to.equal(result, 0);
+      expect(result).to.equal(0);
     });
     it(msg, () => {
       const result = calculateNumber(fType, 14.4, 6.4);
-      expect(result).to.equal(result, 8);
+      expect(result).to.equal(8);
     });
     it(msg, () => {
       const result = calculateNumber(fType, -4.5, -5.7);
-      expect(result).to.equal(result, 2);
+      expect(result).to.equal(2);
     });
   });
 
@@ -75,30 +75,30 @@ describe('SuiteName: calculateNumber', () => {
     const fType = 'DIVIDE';
     it(msg, () => {
       const result = calculateNumber(fType, -1, -2);
-      expect(result).to.equal(result, 0.5);
+      expect(result).to.equal(0.5);
     });
     it(msg, () => {
       const result = calculateNumber(fType, -18, 6.2);
-      expect(result).to.equal(result, -3);
+      expect(result).to.equal(-3);
     });
     it(msg, () => {
       expect(calculateNumber(fType, 15, 2.98)).to.equal(5);
     });
     it(msg, () => {
       const result = calculateNumber(fType, 27, -3);
-      expect(result).to.equal(result, -9);
+      expect(result).to.equal(-9);
     });
-    it(msg, () => {
+    it('it should return an error', () => {
       const result = calculateNumber(fType, 0, 0);
-      expect(result).to.equal(result, 'Error');
+      expect(result).to.equal('Error');
     });
     it(msg, () => {
       const result = calculateNumber(fType, 14.4, 7.4);
-      expect(result).to.equal(result, 2);
+      expect(result).to.equal(2);
     });
     it(msg, () => {
       const result = calculateNumber(fType, -25.5, -5.1);
-      expect(result).to.equal(result, 5);
+      expect(result).to.equal(5);
     });
   });
 });
