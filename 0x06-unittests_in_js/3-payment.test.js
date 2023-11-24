@@ -13,6 +13,7 @@ describe(suiteName, () => {
     const res = sendPaymentRequestToApi(100, 20);
     assert.strictEqual(res, 120);
     sinon.assert.calledOnce(spy);
+    spy.calledWith('SUM', 100, 20);
   });
   it('Validate the sendPaymentRequestToApi value', () => {
     const res = sendPaymentRequestToApi(100, 120);
