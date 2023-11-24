@@ -6,7 +6,7 @@ const assert = require('assert');
 const { describe, it } = require('mocha');
 const calculateNumber = require('./0-calcul');
 
-describe('calculateNumber', () => {
+describe('SuiteName: calculateNumber', () => {
   const msg = 'it should return the rounded sum of a and b';
   it(msg, () => {
     const result = calculateNumber(-1, -2);
@@ -30,5 +30,9 @@ describe('calculateNumber', () => {
   it(msg, () => {
     const result = calculateNumber(14.4, 6.4);
     assert.strictEqual(result, 20);
+  });
+  it(msg, () => {
+    const result = calculateNumber(-4.5, -5.7);
+    assert.strictEqual(result, -10);
   });
 });
