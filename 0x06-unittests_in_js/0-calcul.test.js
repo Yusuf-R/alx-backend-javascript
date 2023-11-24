@@ -2,7 +2,7 @@
 // You can assume a and b are always number
 // Tests should be around the “rounded” part
 
-const assert = require('assert');
+const assert = require('assert'); // using node asertion library
 const { describe, it } = require('mocha');
 const calculateNumber = require('./0-calcul');
 
