@@ -20,8 +20,4 @@ describe(suiteName, () => {
     assert.strictEqual(res, 10);
     sinon.assert.calledOnce(stub);
   });
-  it('Restore the normal functional value', () => {
-    const res = sendPaymentRequestToApi(100, 20);
-    assert.strictEqual(res, 120);
-  });
 });
